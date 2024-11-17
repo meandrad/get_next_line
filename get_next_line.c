@@ -6,45 +6,33 @@
 /*   By: meandrad <meandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:44:32 by meandrad          #+#    #+#             */
-/*   Updated: 2024/11/16 17:50:05 by meandrad         ###   ########.fr       */
+/*   Updated: 2024/11/17 14:00:54 by meandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*read_line(int fd, char **line)
+
+char	*read_line(int fd, int *bytes)
 {
-	char	*tmp_buffer[BUFFER_SIZE + 1];
-	ssize_t	bytes_read;
+	char	*t_buffer;
 	
-	bytes_read = read(fd, tmp_buffer, BUFFER_SIZE);
-	
+	t_buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!t_buffer)
+		return (NULL);
+	*bytes = read(fd, t_buffer, BUFFER_SIZE);
+	if (*bytes < 0)
+		//break ;
 }
+
 char	*get_next_line(int fd)
 {
-	static char *line;
+	static char	*line;
+	int	bytes;
 	
-	if (fd < 0)
-		return (0);
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	bytes = 1;
+	line = read_line(fd, &bytes);
 	
 }
-
-
-/* #include <fcntl.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#define BUFFER_SIZE 34
-int main (void)
-{
-	int	fd;
-	char *buffer;
-	ssize_t bytes_read;
-
-	fd = open("test.txt", O_RDONLY || O_CREAT);
-	printf("%d\n", fd);
-	buffer = (char *)calloc(BUFFER_SIZE, sizeof(char));
-	bytes_read = read(fd, buffer, BUFFER_SIZE);
-	buffer[bytes_read] = '\0';
-	printf("%s\n", buffer);
-} */
