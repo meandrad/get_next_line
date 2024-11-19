@@ -6,7 +6,7 @@
 /*   By: meandrad <meandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:44:28 by meandrad          #+#    #+#             */
-/*   Updated: 2024/11/17 13:03:25 by meandrad         ###   ########.fr       */
+/*   Updated: 2024/11/18 20:35:25 by meandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,25 @@ char	*ft_strdup(const char *s)
 	cpy[i] = '\0';
 	return (cpy);
 }
-char	*ft_strchr(const char *s, int c)
-{
-	int		i;
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == (char)c)
-			return ((char *) &s[i]);
-		i++;
-	}
-	if ((char)c == '\0')
-		return ((char *) &s[i]);
-	return (NULL);
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	s_len;
+	size_t	sub_len;
+	char	*sub;
+
+	s_len = ft_strlen(s);
+	if (!s)
+		return (NULL);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (start + len > s_len)
+		sub_len = s_len - start;
+	else
+		sub_len = len;
+	sub = (char *)malloc((sub_len + 1) * sizeof(char));
+	if (!sub)
+		return (NULL);
+	ft_strlcpy(sub, s + start, sub_len + 1);
+	return (sub);
 }
