@@ -6,7 +6,7 @@
 /*   By: meandrad <meandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:44:32 by meandrad          #+#    #+#             */
-/*   Updated: 2024/11/20 11:56:41 by meandrad         ###   ########.fr       */
+/*   Updated: 2024/11/20 12:06:04 by meandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ char	*ft_cut_line(char **buffer)
 	i = 0;
 	while ((*buffer)[i] != '\n' && (*buffer)[i] != '\0')
 		i++;
-	return (*buffer);
 }
 char	*ft_read_line(int fd, char **buffer, int *bytes_read)
 {
