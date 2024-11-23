@@ -6,14 +6,15 @@
 /*   By: meandrad <meandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:34:22 by meandrad          #+#    #+#             */
-/*   Updated: 2024/11/22 21:32:32 by meandrad         ###   ########.fr       */
+/*   Updated: 2024/11/23 14:06:55 by meandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char *free_buff(char *buff)
+static char	*free_buff(char *buff, char *read_buff)
 {
+	free(read_buff);
 	free(buff);
 	return (NULL);
 }
@@ -32,7 +33,7 @@ static char	*ft_read_line(int fd, char	*buff)
 	{
 		bytes_read = read(fd, read_buff, BUFFER_SIZE);
 		if (bytes_read == -1)
-			return (free_buff(buff));
+			return (free_buff(buff, read_buff));
 		read_buff[bytes_read] = '\0';
 		temp_line = buff;
 		buff = ft_strjoin(temp_line, read_buff);
@@ -95,18 +96,3 @@ char	*get_next_line(int fd)
 	buff = ft_new_line(buff);
 	return (line);
 }
-/* #include <fcntl.h>
-#include <stdio.h>
-int main (void)
-{
-	int	fd;
-	char	*line;
-
-	fd = open("get_next_line.h", O_RDONLY);
-	while ((line = get_next_line(fd)) != NULL)
-	{
-		printf("%s\n", line);
-		free(line);	
-	}
-	return (0);
-} */
