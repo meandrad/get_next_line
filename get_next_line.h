@@ -6,7 +6,7 @@
 /*   By: meandrad <meandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:34:27 by meandrad          #+#    #+#             */
-/*   Updated: 2024/11/22 21:24:19 by meandrad         ###   ########.fr       */
+/*   Updated: 2024/11/23 14:25:55 by meandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-void	*ft_calloc(size_t nmemb, size_t size);
 
 #endif

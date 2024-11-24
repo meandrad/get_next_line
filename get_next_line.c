@@ -6,7 +6,7 @@
 /*   By: meandrad <meandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:34:22 by meandrad          #+#    #+#             */
-/*   Updated: 2024/11/23 14:06:55 by meandrad         ###   ########.fr       */
+/*   Updated: 2024/11/24 12:27:18 by meandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,17 @@ static char	*ft_read_line(int fd, char	*buff)
 	return (buff);
 }
 
-static char	*ft_cut_line(char *line)
+static char	*ft_cut_line(char *buff)
 {
 	int		i;
 	char	*new_line;
 
 	i = 0;
-	if (!line[i])
+	if (!buff[i])
 		return (NULL);
-	while (line[i] != '\n' && line[i] != '\0')
+	while (buff[i] != '\n' && buff[i] != '\0')
 		i++;
-	new_line = ft_substr(line, 0, i + 1);
+	new_line = ft_substr(buff, 0, i + 1);
 	return (new_line);
 }
 
