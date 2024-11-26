@@ -90,6 +90,8 @@ valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out tes
 
 This command will check for memory leaks, show detailed information about them, and track the origins of memory allocations. It passes all the test files (located in the `tests/` folder) as arguments to your compiled program (`./a.out`).
 
-for more tests try: https://github.com/Tripouille/gnlTester
+For additional tests and resources to validate your **Get Next Line** project, you can use the **GNL Tester** repository by Tripouille. It provides a more extensive set of tests for evaluating your implementation.
+
+Check out the repository here: [https://github.com/Tripouille/gnlTester](https://github.com/Tripouille/gnlTester).
 
 This will read the `get_next_line.h` file line by line and print its contents to the terminal.
