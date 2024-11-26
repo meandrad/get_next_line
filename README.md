@@ -63,20 +63,20 @@ int main() {
 
 ### Step 3: Compile the Code
 
-To compile the code, you can use a C compiler like GCC:
+To compile the code, you can use a C compiler like CC:
 
 ```bash
-cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 gnl_example main.c get_next_line.c get_next_line_utils.c
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 main.c get_next_line.c get_next_line_utils.c
 ```
 
-This will generate an executable named `gnl_example`.
+This will generate an executable named `./a.out`.
 
 ### Step 4: Run the Code
 
 After compiling, run the program using:
 
 ```bash
-./gnl_example
+./a.out
 ```
 
 This will read the `get_next_line.h` file line by line and print its contents to the terminal.
