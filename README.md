@@ -93,5 +93,3 @@ This command will check for memory leaks, show detailed information about them, 
 For additional tests and resources to validate your **Get Next Line** project, you can use the **GNL Tester** repository by Tripouille. It provides a more extensive set of tests for evaluating your implementation.
 
 Check out the repository here: [https://github.com/Tripouille/gnlTester](https://github.com/Tripouille/gnlTester).
-
-This will read the `get_next_line.h` file line by line and print its contents to the terminal.
