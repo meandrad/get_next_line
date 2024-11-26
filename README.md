@@ -68,6 +68,14 @@ To compile the code, you can use a C compiler like CC:
 ```bash
 cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 main.c get_next_line.c get_next_line_utils.c
 ```
+The command compiles the project as follows:
+
+1. **`cc`**: Calls the C compiler (could be GCC or Clang).
+2. **`-Wall`**: Enables general warnings.
+3. **`-Wextra`**: Enables additional, less common warnings.
+4. **`-Werror`**: Treats warnings as errors, so compilation will fail if there are any warnings.
+5. **`-D BUFFER_SIZE=42`**: Defines the macro `BUFFER_SIZE` to be 42, which is used in the `get_next_line` function to set the buffer size.
+6. **`main.c get_next_line.c get_next_line_utils.c`**: Specifies the source files to be compiled and linked into the executable.
 
 This will generate an executable named `./a.out`.
 
