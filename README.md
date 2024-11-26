@@ -1,7 +1,3 @@
-Here’s the revised README, with the reference to `file.txt` changed to `get_next_line.h`:
-
----
-
 # Get Next Line (GNL)
 
 The **Get Next Line** project implements a function that reads a line from a file descriptor, one at a time. It is designed to be memory-efficient, processing the file without loading the entire content at once.
