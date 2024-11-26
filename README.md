@@ -66,7 +66,7 @@ int main() {
 To compile the code, you can use a C compiler like GCC:
 
 ```bash
-gcc -o gnl_example main.c get_next_line.c get_next_line_utils.c -Wall -Wextra -Werror
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 gnl_example main.c get_next_line.c get_next_line_utils.c
 ```
 
 This will generate an executable named `gnl_example`.
