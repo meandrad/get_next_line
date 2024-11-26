@@ -54,13 +54,6 @@ int main() {
     return 0;
 }
 ```
-
-### Explanation of the Code:
-
-1. **Open File**: The `open` function is used to open the `get_next_line.h` file in read-only mode (`O_RDONLY`).
-2. **Read the File**: The `get_next_line` function is called repeatedly to read each line. Each line is printed, and the allocated memory for it is freed.
-3. **Close File**: The file is closed using the `close` function after reading all lines.
-
 ### Step 3: Compile the Code
 
 To compile the code, you can use a C compiler like CC:
@@ -86,5 +79,17 @@ After compiling, run the program using:
 ```bash
 ./a.out
 ```
+
+### Step 5: Run the Test
+
+To run the tests with **Valgrind** and ensure there are no memory leaks or errors, use the following command:
+
+```bash
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out tests/*
+```
+
+This command will check for memory leaks, show detailed information about them, and track the origins of memory allocations. It passes all the test files (located in the `tests/` folder) as arguments to your compiled program (`./a.out`).
+
+for more tests try: https://github.com/Tripouille/gnlTester
 
 This will read the `get_next_line.h` file line by line and print its contents to the terminal.
