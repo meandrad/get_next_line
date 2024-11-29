@@ -85,10 +85,10 @@ After compiling, run the program using:
 To run the tests with **Valgrind** and ensure there are no memory leaks or errors, use the following command:
 
 ```bash
-valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out tests/*
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out *.c
 ```
 
-This command will check for memory leaks, show detailed information about them, and track the origins of memory allocations. It passes all the test files (located in the `tests/` folder) as arguments to your compiled program (`./a.out`).
+This command will check for memory leaks, show detailed information about them, and track the origins of memory allocations. It passes all the files as arguments to your compiled program (`./a.out`).
 
 For additional tests and resources to validate your **Get Next Line** project, you can use the **GNL Tester** repository by Tripouille. It provides a more extensive set of tests for evaluating your implementation.
 
